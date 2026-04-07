@@ -166,7 +166,7 @@ class TestAccountService(TestCase):
         """It should Update an Account"""
         account = self._create_accounts(1)[0]
         account.name = "Aaron"
-        resp = self.client.post(
+        resp = self.client.put(
             f"{BASE_URL}/{account.id}",
             json=account.serialize(),
             content_type="application/json"
@@ -179,7 +179,7 @@ class TestAccountService(TestCase):
         """It should get 404 from Update an Account """
         account = self._create_accounts(1)[0]
         account.name = "Aaron"
-        resp = self.client.post(
+        resp = self.client.put(
             f"{BASE_URL}/0",
             json=account.serialize(),
             content_type="application/json"

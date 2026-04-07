@@ -95,7 +95,7 @@ def get_accounts(account_id):
 # UPDATE AN EXISTING ACCOUNT
 ######################################################################
 
-@app.route("/accounts/<int:account_id>", methods=["POST"])
+@app.route("/accounts/<int:account_id>", methods=["PUT"])
 def update_accounts(account_id):
     """
     Updates an Account
